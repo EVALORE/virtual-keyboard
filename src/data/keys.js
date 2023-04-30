@@ -280,7 +280,7 @@ export default [
   },
   {
     code: 'Space',
-    value: ' ',
+    value: 'Space',
   },
   {
     code: 'AltRight',
