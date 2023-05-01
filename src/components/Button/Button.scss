@@ -1,0 +1,61 @@
+.key {
+  display: block;
+
+  width: 40px;
+  height: 40px;
+
+  font-size: 18px;
+
+  border-radius: 5px;
+
+  transition: all 0.1s ease-in;
+
+  &:nth-child(14),
+  &:nth-child(43) {
+    width: 123px;
+    background-color: yellow;
+  }
+
+  &:nth-child(15) {
+    width: 50px;
+    background-color: yellow;
+  }
+
+  &:nth-child(29) {
+    width: 70px;
+    background-color: yellow;
+  }
+
+  &:nth-child(30) {
+    width: 110px;
+    background-color: yellow;
+  }
+
+  &:nth-child(42) {
+    width: 98px;
+    background-color: yellow;
+  }
+
+  &:nth-child(55),
+  &:nth-child(56) {
+    width: 85px;
+    background-color: yellow;
+  }
+
+  &:nth-child(57) {
+    width: 50px;
+  }
+
+  &:nth-child(59) {
+    width: 230px;
+    background-color: yellow;
+  }
+
+  &:nth-child(61) {
+    width: 60px;
+  }
+
+  &:active, &.active {
+    border-radius: 12px;
+  }
+}
