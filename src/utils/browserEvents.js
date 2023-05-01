@@ -6,6 +6,7 @@ function browserEvents(KeyboardButtonsLink) {
     KeyboardButtonsLink.forEach((button) => {
       if ((first.code === button.code || first.key === button.currentValue) && first.key !== 'Alt') {
         button.action();
+        button.key.classList.add('active');
       }
     });
 
@@ -15,6 +16,7 @@ function browserEvents(KeyboardButtonsLink) {
         KeyboardButtonsLink.forEach((button) => {
           if (button.currentValue === 'Alt') {
             button.action();
+            button.key.classList.add('active');
           }
         });
       }
@@ -22,10 +24,15 @@ function browserEvents(KeyboardButtonsLink) {
   });
 
   window.addEventListener('keyup', (first) => {
+    KeyboardButtonsLink.forEach((button) => {
+      button.key.classList.remove('active');
+    });
+
     if (first.key !== 'Shift') return;
     KeyboardButtonsLink.forEach((button) => {
       if (button.currentValue === 'Shift') {
         button.action();
+        button.key.classList.remove('active');
       }
     });
   });
@@ -35,6 +42,7 @@ function browserEvents(KeyboardButtonsLink) {
       KeyboardButtonsLink.forEach((button) => {
         if (button.currentValue === 'Alt') {
           button.action();
+          button.key.classList.remove('active');
         }
       });
     }

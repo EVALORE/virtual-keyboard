@@ -12,7 +12,10 @@ function Button(keyValues, textarea, links) {
     button.key.addEventListener('mousedown', button.action);
     button.key.addEventListener('mouseup', button.action);
   } else {
-    button.key.addEventListener('click', button.action);
+    button.key.addEventListener('click', () => {
+      button.action();
+      // button.key.classList.remove('active');
+    });
   }
 
   return button;
