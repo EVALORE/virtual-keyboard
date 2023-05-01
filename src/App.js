@@ -6,10 +6,12 @@ import keys from './data/keys';
 function createApp() {
   const App = document.createElement('div');
   App.classList.add('container');
-  const textarea = Textarea();
-  const keyboard = Keyboard(keys);
 
-  App.appendChild(textarea, keyboard);
+  const textarea = Textarea();
+  const keyboard = Keyboard(keys, textarea);
+
+  App.appendChild(textarea);
+  App.appendChild(keyboard);
   return App;
 }
 
