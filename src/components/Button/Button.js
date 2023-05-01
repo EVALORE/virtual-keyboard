@@ -1,10 +1,21 @@
+import './Button.scss';
 import Key from '../../Classes/Key';
+import addEventToKey from '../../utils/addEventToKey';
 
-function Button(key) {
-  const button = new Key(key);
-  console.log(button);
+function Button(keyValues, textarea, links) {
+  const button = new Key(keyValues);
   button.key.className = 'key';
-  return button.key;
+
+  button.action = addEventToKey(textarea, button, links);
+
+  if (button.currentValue === 'Shift') {
+    button.key.addEventListener('mousedown', button.action);
+    button.key.addEventListener('mouseup', button.action);
+  } else {
+    button.key.addEventListener('click', button.action);
+  }
+
+  return button;
 }
 
 export default Button;
