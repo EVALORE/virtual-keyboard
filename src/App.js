@@ -5,6 +5,10 @@ import keys from './data/keys';
 
 function createApp() {
   const App = document.createElement('div');
+  const text1 = document.createElement('p');
+  text1.textContent = 'Keyboard is created on Windows system.';
+  const text2 = document.createElement('p');
+  text2.textContent = 'Combination to change language: Ctrl + Alt.';
   App.classList.add('container');
 
   const textarea = Textarea();
@@ -12,6 +16,8 @@ function createApp() {
 
   App.appendChild(textarea);
   App.appendChild(keyboard);
+  App.appendChild(text1);
+  App.appendChild(text2);
   return App;
 }
 

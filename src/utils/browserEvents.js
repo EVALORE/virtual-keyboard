@@ -9,6 +9,11 @@ function browserEvents(KeyboardButtonsLink) {
         button.key.classList.add('active');
       }
     });
+    KeyboardButtonsLink.forEach((button) => {
+      if (first.code === button.code || first.key === button.currentValue) {
+        button.key.classList.add('active');
+      }
+    });
 
     if (first.ctrlKey) {
       if (first.repeat) return;

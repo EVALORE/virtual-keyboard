@@ -7,7 +7,6 @@ function addEventToKey(textarea, key, keyLinks) {
   const field = textarea;
   const links = keyLinks;
 
-  // let isCaps = false;
   let isShift = false;
   let lang = 'en';
 
@@ -52,7 +51,16 @@ function addEventToKey(textarea, key, keyLinks) {
       };
       break;
     case 'ControlLeft':
+    case 'ControlRight':
+    case 'MetaLeft':
       button.action = () => {};
+      break;
+    case 'Enter':
+      button.action = () => {
+        const index = field.selectionStart;
+        field.value = insertValue(field.value, '\n', index);
+        field.selectionEnd = index + 1;
+      };
       break;
     case 'Delete':
       button.action = () => {
